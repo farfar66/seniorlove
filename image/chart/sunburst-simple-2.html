@@ -1,0 +1,127 @@
+<!--
+	此示例下载自 https://echarts.apache.org/examples/zh/editor.html?c=sunburst-simple&code=G4QwTgBAdgpg7gERAFxBAvBA2gKAhAbz32hAFsYAuCAckEAAwFz1B2V0HIDQeXlB-I0FGDQVsUaAaYvgDGACwCWAGwAmYGFGq4SJIsuVRyVWoEhzDgKFrQkgK5aAHAGZBakuOQwyAZWQBPSVtU2SwgPaSfYNQ0AMRmAKxhAGYWYQIQAPTxEIB38oCcpoBccoDgxoBZ2oA5GYBOQQY2PgAOIMJ2LtQADAB0ZglJZtUApBCAsHKA8AmAcGaAZXpFJAC-1l5iUrLyigPKnl4kGhRBgHBygG3agF1ygDAqbPpzykam1ACM1SO7EHYOzm4e06N-AUHBIAAsAOwvZnGJEIDAMYAupuklhBQhFomEIIAPt0AzoqAELcCrdimUKq4arULI0IBZWh0ev0zvhhgiIISzrNdgstDRADdOgFEdHb4_ZaV5WIn4C5OVzuahks6-fyBWggqIxL5JNJZPKFfEkUrlSqohrfZptLp9VnE05eQa3AC6AxJah5800QUAB6Z6TV7EAmLSHABslts9g5125RL5D0FduEz2kACYAEai34AoFCsGQ2Hws6y5FVCB1O2HDFJlW424GmxjGRyBTYIlGmwUoKAVWVALLygH7tQCwQfSzozqCzpeyrlzCOqRPcBSFvb7A8H_oDgeFheDoXCpdKILH5QnakmU4c02rpZmtY6Zuri7RAPueFvV9Ygh0b-ObnJuk4gHq7wR7_qD_AxA7Dw4jY-jk-nKNn8--qZxy_xVcbG1OY9WAgwwOJHAdQAbhwHBSmQcQfCgDA23wABnGAwHEGAMLdZRXBKSkMOMKAA2MMAMOQWsIGkFAQGoWBEAYzUwBAaRxGMfDsBOWgAE5WhoHVNUkEAAxgSQCLUMAfFQewghoAxV1PV10LUK9HgAQQQLT-L04NAFo5QBh_XfZRP3jOozGTJVF3_PEhmIbVBhgoA
+	⚠ 请注意，该图表不是 Apache ECharts 官方示例，而是由用户代码生成的。请注意鉴别其内容。
+-->
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.5.0/files/dist/echarts.min.js"></script>
+  
+  <!-- Uncomment this line if you want to dataTool extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.5.0/files/dist/extension/dataTool.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use gl extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts-gl/2/files/dist/echarts-gl.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-stat extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts-stat/latest/files/dist/ecStat.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use map
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/4.9.0/files/map/js/china.js"></script>
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/4.9.0/files/map/js/world.js"></script>
+  -->
+  <!-- Uncomment these two lines if you want to use bmap extension
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=YOUR_API_KEY"></script>
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.5.0/files/dist/extension/bmap.min.js"></script>
+  -->
+
+  <script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    var newData = [
+  {
+    name: '老年男性住房情况',
+    children: [
+      {
+        name: '有房',
+        value: 83,
+        itemStyle: {
+          color: '#855f35', // 修改为指定颜色
+          opacity: 0.8 // 80% 不透明度
+        },
+        children: [
+          {
+            name: '与家人同住',
+            value: 10,
+            itemStyle: {
+              color: '#a47a48', // 调整为与 #855f35 相关的颜色
+              opacity: 0.3 // 30% 不透明度
+            },
+          },
+          {
+            name: '独居',
+            value: 73,
+            itemStyle: {
+              color: '#855f35', // 修改为指定颜色
+              opacity: 0.8 // 80% 不透明度
+            },
+          }
+        ]
+      },
+      {
+        name: '无房',
+        value: 16,
+        itemStyle: {
+          color: '#6c4d2b', // 调整为与 #855f35 相关的颜色
+          opacity: 0.61 // 61% 不透明度
+        },
+        children: [
+          {
+            name: '单位宿舍',
+            value: 3,
+            itemStyle: {
+              color: '#6c4d2b', // 调整为与 #855f35 相关的颜色
+              opacity: 0.61 // 61% 不透明度
+            },
+          },
+          {
+            name: '租房',
+            value: 13,
+            itemStyle: {
+              color: '#6c4d2b', // 调整为与 #855f35 相关的颜色
+              opacity: 0.61 // 61% 不透明度
+            },
+          }
+        ]
+      }
+    ]
+  }
+];
+
+option = {
+  series: {
+    type: 'sunburst',
+    data: newData,
+    radius: [0, '90%'],
+    label: {
+      rotate: ''
+    },
+    itemStyle: {
+      color: '#ADA9A9', // 中心颜色
+      opacity: 0.81 // 81% 不透明度
+    }
+  }
+};
+
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

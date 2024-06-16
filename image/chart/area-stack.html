@@ -1,0 +1,165 @@
+<!--
+	此示例下载自 https://echarts.apache.org/examples/zh/editor.html?c=area-stack&code=PYBwLglsB2AEC8sDeAoWtJgDYFMBcya6GOAHmAQOSCAAYC56gJf6DK8oCFugGdqBJWoKVGgygmC0cs4FGDQPiGgPgVAiCqUiAXwA0RMMGBZIIAqmIYAThADmOnJqoBDUhADOlORpPmACsAjQwBtUQ1gAniHyxKAY01gMwsrDVgsIwAjHCxXMOJIoz8Aax1AgFdoABMAYSVgQ18AYgA2IwB2AE4ADgBWSXipN1hZZoAzAoBbIzBnQrbMv0gYWAAKECNNI06zAEpCeNwwDGAwIywEWAmpmYA6TRws9L8cUdGzdM6ZWAhnTvn4AD5YC87YAGobu92AN3X0nDXAAMswA3M10EtYH4YM4nJsAAYAEiQ22mZgA2kCALq7GxmABq_xwUgAPJFNAB6R4I8HxNF7DqaACiSQAFqNbjg3k8FvFwjhlt5NCd4YgzlzOr9ibBKSs1lh5gAqWAARiBIN2CgAYhBSIdRgAmMEQ4gwpw4eHvRDIpCS3bdTTJAxSWAo-1mAwQHBmABy0xJBHd3z-WABrtGKOForAUgApLNyVSaXSwlITfEDmB0po4Oa4WBU-gmsXQrh9Nk4sQsj0jAQMZRAABygBog8SWXyAY2tAEbpbeulEA-LE9iTY6ShBRKSLAUhV9BtHA9HM-dRhMxGH44ACCZgAkt19GoS8RD610GkIFkZwK2hRfABmOOWZraHRsm-UAAsD9C6EnvWAnSoe9Hw0fMjEcAAZKIYgIMBNABUciFIDdTDMetmmXdwvB8fwehwHQCg8YCwknTIa00DwAHEjFUWA2nWT1v2rWt60oQ0gVVW921Y9j3y4tjVXqPt-JKPj2PKUTVWqCTKlEtjZNVWTDUoEcNEPbFQg8ZDzDQjQMOITxvCoUMASIjRumnNUNUY9BOkcAggWs2B8Ug6JYj5eImW6XoXF8JBjJJWAH1NQ9iyIdSiE9bQfR04g9PQaAAyoFte1NAzsKwRwcFM4gzDWFIqEAbgNAHnE7L0EmecAGVPFwA9HO5EA2SMMxtPcsIOj8dJUN8SLvQsYLHJrNZ60Nd9KmuQ1b3fa5JNVabyhKabakNabKlvRaFrVEbptVKbYGqcpwviSUqo8GrWpA_JCkoIpIgm26sgaNNHPKowTrOuKzUuqgbruw0HuC5oT1i00Es6bDuxS-I0qoDLoCyxzcqSZJCpK56Dle6qlyBjR6sa5quo-2dgA6rrKB6n1HtUgbmNgDF3zW2B6fGjb33Ka531228Nsm659uuEo2dgW9qkOsJjsxy8LqwApvvKNpDUqVU2kpo80cqiXzs-6WrqKOWFaVlXQqp9CQcS3xB0hsJod8WH4dNRH8t8YrSqc9G3qxurOgapqWsJ2jic6qhyb6xpqaG2nKkFvnYEqZbYHKQXag2kpqnZsbYA21U4-F0WNHF06l1NdAYW1773z8VVFd4_rTRe93Ja1mXinLyudsNlpAbClApHBFBKTlHJ1g6iJnC2AwYyMfRYEGowUChBQFQAEVrTZQGGaBdmDrFcRnh1qLOAB9a4IAeZ5lyzHM4DXqAN-D_ZDmOU5zkua5g9Pl5Lg-F4vR9XYZ4xCA6lYAgnBOmXu18YCbx_mYXYTJWR-A5MHBAZ8IrQL_ivRAd9d7dBAGcUMx936jFDLKeU6xl5rAAdiZUlkQHdzBEAA
+	⚠ 请注意，该图表不是 Apache ECharts 官方示例，而是由用户代码生成的。请注意鉴别其内容。
+-->
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.5.0/files/dist/echarts.min.js"></script>
+  
+  <!-- Uncomment this line if you want to dataTool extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.5.0/files/dist/extension/dataTool.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use gl extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts-gl/2/files/dist/echarts-gl.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-stat extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts-stat/latest/files/dist/ecStat.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use map
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/4.9.0/files/map/js/china.js"></script>
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/4.9.0/files/map/js/world.js"></script>
+  -->
+  <!-- Uncomment these two lines if you want to use bmap extension
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=YOUR_API_KEY"></script>
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.5.0/files/dist/extension/bmap.min.js"></script>
+  -->
+
+  <script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    option = {
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'cross',
+      label: {
+        backgroundColor: '#6a7985'
+      }
+    },
+    formatter: function (params) {
+      let total = params.reduce((sum, item) => sum + item.value, 0);
+      let content = `${params[0].axisValue}<br/>`;
+      params.forEach(item => {
+        let percent = ((item.value / total) * 100).toFixed(2);
+        content += `${item.marker} ${item.seriesName}: ${item.value} (${percent}%)<br/>`;
+      });
+      return content;
+    }
+  },
+  legend: {
+    top: '10%',
+    data: ['一般倾向', '正面倾向', '负面倾向'],
+    top: 'bottom',
+  },
+  toolbox: {
+    feature: {
+      saveAsImage: {}
+    }
+  },
+  grid: {
+    left: '3%',
+    right: '4%',
+    bottom: '10%',
+    containLabel: true
+  },
+  xAxis: [
+    {
+      type: 'category',
+      boundaryGap: false,
+      data: ['2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022']
+    }
+  ],
+  yAxis: [
+    {
+      type: 'value',
+      max: 100,
+      min: 0,
+      axisLabel: {
+        formatter: '{value} %'
+      }
+    }
+  ],
+  series: [
+    {
+      name: '一般倾向',
+      type: 'line',
+      stack: '总量',
+      areaStyle: {},
+      emphasis: {
+        focus: 'series'
+      },
+      data: [249, 234, 181, 176, 152, 193, 156, 124, 114, 87],
+      itemStyle: {
+        color: '#b23b2d'
+      },
+      areaStyle: {
+        color: '#b23b2d'
+      }
+    },
+    {
+      name: '正面倾向',
+      type: 'line',
+      stack: '总量',
+      areaStyle: {},
+      emphasis: {
+        focus: 'series'
+      },
+      data: [43, 43, 26, 47, 44, 36, 34, 87, 67, 38],
+      itemStyle: {
+        color: '#7f291f'
+      },
+      areaStyle: {
+        color: '#7f291f'
+      }
+    },
+    {
+      name: '负面倾向',
+      type: 'line',
+      stack: '总量',
+      areaStyle: {},
+      emphasis: {
+        focus: 'series'
+      },
+      data: [97, 87, 92, 77, 56, 68, 49, 6, 12, 38],
+      itemStyle: {
+        color: '#4c1914'
+      },
+      areaStyle: {
+        color: '#4c1914'
+      }
+    }
+  ]
+};
+
+// Calculate percentage data
+let totalData = option.series[0].data.map((_, i) => {
+  return option.series.reduce((sum, series) => sum + series.data[i], 0);
+});
+
+option.series.forEach(series => {
+  series.data = series.data.map((val, i) => (val / totalData[i]) * 100);
+});
+
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

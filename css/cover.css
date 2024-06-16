@@ -1,0 +1,229 @@
+.parent {
+    display: grid;
+    place-items: center;
+    height: 100%; /* 确保父元素高度足够 */
+}
+
+.line1 {
+    position: static; /* 由于使用了grid，不需要相对定位 */
+    width: 90%;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+}
+
+.line2 {
+    position: static; /* 由于使用了grid，不需要相对定位 */
+    width: 90%;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+}
+
+.line3 {
+    position: static; /* 由于使用了grid，不需要相对定位 */
+    width: 90%;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+}
+
+.line4 {
+    position: static; /* 由于使用了grid，不需要相对定位 */
+    width: 90%;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+}
+
+.line5 {
+    position: static; /* 由于使用了grid，不需要相对定位 */
+    width: 90%;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+}
+
+.line6 {
+    position: static; /* 由于使用了grid，不需要相对定位 */
+    width: 90%;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+}
+
+.line7 {
+    position: static; /* 由于使用了grid，不需要相对定位 */
+    width: 90%;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+}
+
+
+/* animattion */
+.welcome1 {
+    visibility: hidden;
+}
+
+.welcome2 {
+    visibility: hidden;
+}
+
+.welcome3 {
+    visibility: hidden;
+}
+
+.welcome4 {
+    visibility: hidden;
+}
+
+.welcome5 {
+    visibility: hidden;
+}
+
+.welcome6 {
+    visibility: hidden;
+}
+
+.welcome7 {
+    visibility: hidden;
+}
+
+
+
+@keyframes typeMsg {
+    from {
+        width: 0em;
+    }
+
+    to {
+        /* width: 16%; */
+        width: 130px;
+    }
+}
+
+@keyframes typeMsg2 {
+    from {
+        width: 0em;
+    }
+
+    to {
+        /* width: 35%; */
+        width: 260px;
+    }
+}
+
+@keyframes typeMsg3 {
+    from {
+        width: 0em;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes cursorAnim {
+    from {
+        border-right-color: #ff6f61;
+    }
+
+    to {
+        border-right-color: transparent;
+    }
+}
+
+.welcome1.play {
+    animation: 
+        typeMsg3 800ms steps(30) 3s 1 normal both running, 
+        cursorAnim 500ms steps(25) 4s 1 normal both running;
+    visibility: visible;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+.welcome2.play {
+    animation: 
+        typeMsg3 800ms steps(30) 3s 1 normal both running, 
+        cursorAnim 500ms steps(25) 4s 1 normal both running;
+    visibility: visible;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+.welcome3.play {
+    animation: 
+        typeMsg3 800ms steps(30) 3s 1 normal both running, 
+        cursorAnim 500ms steps(25) 4s 1 normal both running;
+    visibility: visible;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+.welcome4.play {
+    animation: 
+        typeMsg3 800ms steps(30) 3s 1 normal both running, 
+        cursorAnim 500ms steps(25) 4s 1 normal both running;
+    visibility: visible;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.welcome5.play {
+    animation: 
+        typeMsg3 800ms steps(30) 3s 1 normal both running, 
+        cursorAnim 500ms steps(25) 4s 1 normal both running;
+    visibility: visible;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.welcome6.play {
+    animation: 
+        typeMsg3 800ms steps(30) 3s 1 normal both running, 
+        cursorAnim 500ms steps(25) 4s 1 normal both running;
+    visibility: visible;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.welcome7.play {
+    animation: 
+        typeMsg3 800ms steps(30) 3s 1 normal both running, 
+        cursorAnim 500ms steps(25) 4s 1 normal both running;
+    visibility: visible;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+@keyframes hideCursor {
+    from {
+        border-right-color: #ff6f61;
+    }
+
+    to {
+        border-right-color: transparent;
+    }
+}

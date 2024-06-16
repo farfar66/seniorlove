@@ -1,0 +1,126 @@
+<!--
+	此示例下载自 https://echarts.apache.org/examples/zh/editor.html?c=area-stack&code=PYBwLglsB2AEC8sDeAoWszGAG0iAXMmuhgE4QDmFApqYQOQCGAHhAM70A0x6L7ACsAjQwtQqhIkwATxDUGAY1LA2HbpPTZGAI2rZxPDdsYKA1hWUBXaABMAwjmB1Y9AMQA2RgHYAnAA4AVnpDdABfQ3Cw9VhsahpbA0lMAhdtYDBMAFsuWEMbRjBGQgBtencAwECdQFO5QCg5QEAAwBc9QDbtQFq9QBunQFEdQC8vQCPdQAdTQHnEwAh_wHA5QHYjQEh_nLLK2sAuuUBj5UHRuamAXWJQ6MwcNOZEkgAzagLLUnkiDVg2RgA3agBBNgBJTMYacUiSL63iCwgbAdNNRDmAGABmACkXEM5AoAAswS4ACzQ6LoZIMABMAAYcoY0hlgJkGH40YYFDBCsIADI6PSEMCkSzUTbRZgPVhsEqGCQaGRyRQFOJOaQwq5paz5UjSADijBSh0Y2DY1HRJHyhRK9FxOLxnBcuIAjPrDTjcfQ1uqvlbiNJOeweZI-UlZBd6LdlSzgpIbdFVeRqNzYMVeSFYNBGJl3eVqvVmu1uv1huMpuqMW6GNhhNRxRo2IUzAwACrpZV5ySMc6MADKMli4kp2CcDFc2j84MOWIU9C2uSuEFEmTr0gbyCbLZcrkYyPBPixPl7BvD2eg1BHY6QE-cbhnc4XXD74eomRA8MYbEdlyusEOwAUlmD9ADECDPo0vyumqKIa8fmRBpGsiwEGguPjIhsvrqi6JCRtGDCxvMSwpqsFZSJmLirrm6bXIWpglmW2Bobw1YbhcMGSNurY-Ea4JGli4L4jesCgCYg7SIQOIAHTIuGR4DkOZFAhoVFTl42hYowRrYf2N6sQo7GcTxfHLlcWFCdeVyiW44mSdJTFySAbEyEpvFXPxGgnmeF5XhRRz3o-DAvm-Knht-JR-H4RpGoBRqeeCgE-Di7gQRExAbKEADcQA
+	⚠ 请注意，该图表不是 Apache ECharts 官方示例，而是由用户代码生成的。请注意鉴别其内容。
+-->
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.5.0/files/dist/echarts.min.js"></script>
+  
+  <!-- Uncomment this line if you want to dataTool extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.5.0/files/dist/extension/dataTool.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use gl extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts-gl/2/files/dist/echarts-gl.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-stat extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts-stat/latest/files/dist/ecStat.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use map
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/4.9.0/files/map/js/china.js"></script>
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/4.9.0/files/map/js/world.js"></script>
+  -->
+  <!-- Uncomment these two lines if you want to use bmap extension
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=YOUR_API_KEY"></script>
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.5.0/files/dist/extension/bmap.min.js"></script>
+  -->
+
+  <script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    option = {
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'cross',
+      label: {
+        backgroundColor: '#6a7985'
+      }
+    }
+  },
+  legend: {
+    top: 'bottom', 
+    data: ['65岁以上老年家庭独居空巢数量（万户）', '65岁以上人口数量（万人）']
+  },
+  toolbox: {
+    feature: {
+      saveAsImage: {}
+    }
+  },
+  grid: {
+    left: '3%',
+    right: '4%',
+    top: '20', 
+    bottom: '8%',
+    containLabel: true
+  },
+  xAxis: [
+    {
+      type: 'category',
+      boundaryGap: false,
+      data: ['2000', '2010', '2020'],
+    }
+  ],
+  yAxis: [
+    {
+      type: 'value'
+    }
+  ],
+  series: [
+    {
+      name: '65岁以上老年家庭独居空巢数量（万户）',
+      type: 'line',
+      stack: 'Total',
+      areaStyle: {color: '#b83f2c'}, 
+      itemStyle: {color: '#a43929'}, 
+      lineStyle: {color: '#a43929',}, 
+      emphasis: {
+        focus: 'series'
+      },
+      data: [784, 1444, 2994]
+    },
+    {
+      name: '65岁以上人口数量（万人）',
+      type: 'line',
+      stack: 'Total',
+      areaStyle: {
+        color: '#913123', 
+        opacity: 0.4
+      }, 
+      itemStyle: {
+        color: '#7b2a1e', 
+        opacity: 0.4
+      }, 
+      lineStyle: {
+        color: '#7b2a1e', 
+        opacity: 0.4
+      }, 
+      emphasis: {
+        focus: 'series'
+      },
+      data: [8811, 11883, 19064]
+    }
+  ]
+};
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

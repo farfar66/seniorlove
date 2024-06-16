@@ -1,0 +1,121 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+
+.card {
+  overflow: hidden;
+  margin: 10px; 
+  cursor: pointer;
+  position: relative;
+  width: 270px;
+  height: 270px;
+  background-color: #fff6ed;
+  box-shadow: 0px 0px 10px 5px #d3cccc;
+  border-radius: 15px;
+  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out, background-color 0.5s ease-in-out;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  transition: opacity 1s ease-in-out;
+}
+
+.card .texts {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  bottom: 10px;
+  right: 10px;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+.card .texts::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 100%;
+  border-left: 4px solid #646363;
+  background-color: #646363;
+  opacity: 0;
+  transition: opacity 1s ease-in-out, left 1s ease-in-out;
+}
+
+.card .texts h2,
+.card .texts p {
+  margin-bottom: 6px;
+  opacity: 0;
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.card .texts h2 {
+  font-weight: 300;
+  texts-transform: uppercase;
+  transform: translate(30%, 0%);
+  transition-delay: 0.5s;
+}
+
+.card .texts h2 span {
+  font-weight: 800;
+}
+
+.card .texts p {
+  font-weight: 200;
+  transform: translate(0%, 30%);
+  transition-delay: 1s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 10px 5px #646363;
+  background-color: #fff6ed;
+}
+
+.card:hover img {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.card:hover .texts h2 {
+  opacity: 1;
+  transform: translate(0%, 0%);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  transition-delay: 0.8s;
+}
+
+.card:hover .texts p {
+  opacity: 0.9;
+  transform: translate(0%, 0%);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  transition-delay: 0.9s;
+}
+
+.card:hover .texts::before {
+  background-color: rgba(255, 255, 255, 0);
+  left: 0;
+  opacity: 1;
+  transition-delay: 1s;
+}
+
+.card .texts:hover::before {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.card:not(:hover) img {
+  transition-delay: 1.2s; 
+}

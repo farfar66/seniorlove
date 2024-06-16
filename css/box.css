@@ -1,0 +1,93 @@
+/* 初始化 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+/* 选项卡容器 */
+.tabs {
+    width: 100%;
+    max-width: 800px;
+    background: #f7f7f7;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* 选项卡标签 */
+.tabs .label {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ddd;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s;
+}
+
+/* 选项卡文本 */
+.tabs .label span {
+    display: block;
+    text-align: center;
+    color: #333;
+}
+
+/* 选项卡活动状态指示器 */
+.tabs .label::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #1fab89;
+    border-radius: 0 0 10px 10px;
+    transform: scaleX(0);
+    transition: transform 0.3s;
+}
+
+/* 隐藏所有 input，它们仅用于激活选项卡 */
+.tabs input[type="radio"] {
+    display: none;
+}
+
+/* 当选项卡被选中时 */
+.tabs input[type="radio"]:checked + .label {
+    background: #1fab89;
+    color: white;
+}
+
+/* 显示活动状态指示器 */
+.tabs input[type="radio"]:checked + .label::after {
+    transform: scaleX(1);
+}
+
+/* 选项卡面板 */
+.tabs .panels {
+    padding: 20px;
+    background: white;
+}
+
+/* 隐藏所有面板 */
+.tabs .panel {
+    display: none;
+}
+
+/* 显示被选中的面板 */
+.tabs input[type="radio"]:checked + .label ~ .panels .panel {
+    display: block;
+}
+
+/* 选项卡标签和面板之间的间距 */
+.tabs .label,
+.tabs .panel {
+    margin-bottom: -1px;
+    border-bottom: 1px solid #ccc;
+}

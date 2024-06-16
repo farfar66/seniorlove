@@ -1,0 +1,134 @@
+<!--
+	此示例下载自 https://echarts.apache.org/examples/zh/editor.html?c=funnel-align&code=PYBwLglsB2AEC8sDeAoWszGAG0iAXMmuhgE4QDmFApqYQOQRjUC29ANMegGbCksBDMMzqx6SAQF9YAHgBGpAPQA-JHOmEkAY0mAuuXrFJndJhxzgAD01dYAZwAWwAO6EwpAK7VjJPhGrQwBgA3WkgtAWwOG0wCMS1_ESiSWG5qIXdSamtk9AATIQEANT8XZFhMgVyAeWhsAE9CbgjbalgjG3RM20xMzXacuwEQgEFbAElBGj6bSUNvFvJqW0IAbRtUAegBFiyxQGNrQCN0wD4FQEQVJJywOpBd-m53aGhqSO9kpwhcsHsGABYABgBSc7JezUSj2QJib4AVkBLxI2Go3Ah9BhQJIMQYUIBaJ490e2GG2Eo0AY5Ao4JxsHyYAEqw6JCQsCCEU8hAATAAOACc7FgWx2DEAdHqASqVAGty-jacOSjOZ2FZsAA7N9efyboBuW0ADEqAQADAGba2vokvp6BlLN2AEYAMw8vnbG6Ae89AIHmgGgYwD4rgb-gMyrL5d8AGwq20MQCDkYBJOUA40qALjl3VKGUzTYQoVCAwL9oAXt0AZDGASuj3fSALozOEbHKqhiHU6Uy7XBh3B5PSlvD5fSHYmMgsHI6Gw-kIpGYrsDDFiVEx2x8ZECWzxaC5CDQCiUmv4wnE0ntynU2mwNaer3x2BsrlJm0p-iAc0dAH4ZgDbtCUegYmuXmrls5M3QDUmoBuzUAlgaARido0bdw-hBmmyZovgwgAKcoAQ5Eumqf47ve8pYmBYiAKYKgDVcYAC_GABVKcE5PmyS3kQmyBmIgD4sccZwxpWNyLnWMYNp8PwtvSbbkh2w7doiyKJv2FygH2C54k8y4UCSYg9mA64FHS8FxoBsAWpyyH0IA68q6CKuF3nJ8pcqBx43IAB6aADnxKmAM3amk5AhuzfAqymAA0egDvLhZ0raeatn6QwgCwcoA1RGAIaxgDeijmAz4SQhFFskJZkRRFZXDRQnPPSDFNvQfy8cCoJsT8HEDBJmLZXxsQosxAyjqQ46Tv4M5zoJtYEkSokMBJUk0jJnpWYQXIWspgBQcoAyvoqYA6VnObG3q7ByvzKYAWApaoAaspasNxquYQfrKYAXl6AEe6gAm2oAN04LQB8pmu5kX0IAu_GAKs2gD1ToAVv5BXhMzEPmkgANxAA
+	⚠ 请注意，该图表不是 Apache ECharts 官方示例，而是由用户代码生成的。请注意鉴别其内容。
+-->
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.5.0/files/dist/echarts.min.js"></script>
+  
+  <!-- Uncomment this line if you want to dataTool extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.5.0/files/dist/extension/dataTool.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use gl extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts-gl/2/files/dist/echarts-gl.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-stat extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts-stat/latest/files/dist/ecStat.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use map
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/4.9.0/files/map/js/china.js"></script>
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/4.9.0/files/map/js/world.js"></script>
+  -->
+  <!-- Uncomment these two lines if you want to use bmap extension
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=YOUR_API_KEY"></script>
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.5.0/files/dist/extension/bmap.min.js"></script>
+  -->
+
+  <script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    option = {
+  tooltip: {
+    trigger: 'item',
+    formatter: '{a} <br/>{b} : {c}人'
+  },
+  toolbox: {
+    show: true,
+    orient: 'vertical',
+    top: 'center',
+    feature: {
+      dataView: { readOnly: false },
+      restore: {},
+      saveAsImage: {}
+    }
+  },
+  series: [
+    {
+      name: '正面倾向',
+      type: 'funnel',
+      width: '40%',
+      height: '45%',
+      left: '5%',
+      top: '50%',
+      funnelAlign: 'right',
+      data: [
+        { value: 289, name: '帮助他人', itemStyle: { color: '#77291d' } },
+        { value: 74, name: '活到老学到老', itemStyle: { color: '#b23d2b', opacity: 0.6 } },
+        { value: 139, name: '积极谋生', itemStyle: { color: '#b23d2b', opacity: 0.8 } },
+        { value: 46, name: '见义勇为', itemStyle: { color: '#cd7a5e', opacity: 0.3 } },
+        { value: 55, name: '正直谦让', itemStyle: { color: '#cd7a5e', opacity: 0.75 } }
+      ]
+    },
+    {
+      name: '正面倾向',
+      type: 'funnel',
+      width: '40%',
+      height: '45%',
+      left: '5%',
+      top: '5%',
+      sort: 'ascending',
+      funnelAlign: 'right',
+      data: [
+        { value: 295, name: '照顾家人', itemStyle: { color: '#b23d2b', opacity: 0.8 } },
+        { value: 192, name: '夫妻恩爱', itemStyle: { color: '#b23d2b', opacity: 0.6 } },
+        { value: 121, name: '乐观生活', itemStyle: { color: '#cd7a5e', opacity: 0.75 } },
+        { value: 50, name: '健身运动', itemStyle: { color: '#cd7a5e', opacity: 0.3 } }
+      ]
+    },
+    {
+      name: '负面倾向',
+      type: 'funnel',
+      width: '40%',
+      height: '45%',
+      left: '55%',
+      top: '5%',
+      funnelAlign: 'left',
+      data: [
+        { value: 328, name: '受人帮助', itemStyle: { color: '#cd7a5e', opacity: 0.3 } },
+        { value: 91, name: '无辜受害', itemStyle: { color: '#cd7a5e', opacity: 0.75 } },
+        { value: 47, name: '碰瓷', itemStyle: { color: '#b23d2b', opacity: 0.8 } },
+        { value: 17, name: '不被赡养', itemStyle: { color: '#77291d' } }
+      ]
+    },
+    {
+      name: '负面倾向',
+      type: 'funnel',
+      width: '40%',
+      height: '45%',
+      left: '55%',
+      top: '50%',
+      sort: 'ascending',
+      funnelAlign: 'left',
+      data: [
+        { value: 93, name: '上当受骗', itemStyle: { color: '#cd7a5e', opacity: 0.3 } },
+        { value: 80, name: '倚老卖老', itemStyle: { color: '#cd7a5e', opacity: 0.75 } },
+        { value: 46, name: '空巢孤独', itemStyle: { color: '#b23d2b', opacity: 0.8 } },
+        { value: 17, name: '违法犯罪', itemStyle: { color: '#77291d' } }
+      ]
+    }
+  ]
+};
+
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+/* 定义动画关键帧 */
+@keyframes slideShow {
+    0% { background-image: url('/image/animate/bahe/1.png'); }
+    25% { background-image: url('/image/animate/bahe/2.png'); }
+    50% { background-image: url('/image/animate/bahe/3.png'); }
+    75% { background-image: url('/image/animate/bahe/4.png'); }
+    100% { background-image: url('/image/animate/bahe/5.png'); }
+}
+
+.slideshow-container {
+    width: 100%; /* 或者根据需要设置为其他值 */
+    height: 230px; /* 根据需要调整高度 */
+    background-size: cover; /* 保持图片宽高比并覆盖整个容器 */
+    background-position: center; /* 背景图片居中显示 */
+    animation: slideShow 3s infinite alternate; /* 应用动画 */
+    overflow: visible; /* 允许图片超出容器 */
+    position: relative; /* 为图片定位做准备 */
+}
+
+.slideshow-container img {
+    width: 100%; /* 图片宽度设置为容器宽度的100% */
+    height: auto; /* 保持图片宽高比 */
+    display: block; /* 移除图片的默认行间距 */
+    object-fit: cover; /* 如果图片需要覆盖整个容器，可以设置为cover */
+}

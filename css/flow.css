@@ -1,0 +1,29 @@
+.scroll-container {
+  position: relative;
+  margin: 20px 0;
+  height: 200px;
+  overflow: auto; /* 使用 auto 来显示滚动条 */
+}
+
+.sliding-image {
+  position: absolute;
+  top: 10px;
+  right: 0; /* 初始位置在最右侧 */
+  width: 100px; /* 根据需要调整 */
+  transition: transform 2s ease, opacity 0.5s ease; /* 调整过渡时间为1秒 */
+}
+
+.static-image {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 100px; /* 根据需要调整 */
+}
+
+#moving-image {
+  position: fixed;
+  right: 20px; /* 调整图片离右边界的距离 */
+  top: 50%; /* 让图片垂直居中 */
+  transform: translateY(-50%);
+  z-index: -1; /* 确保图片在文本内容下面 */
+}

@@ -1,0 +1,551 @@
+@font-face {
+    font-family: '汉仪润圆-55W.ttf';
+    src: url('/Fonts/HYRunYuan.TTF') format('truetype')
+}
+
+
+body, .chapter1, .chapter2, .chapter3, .chapter4 {
+    transition: background 0.2s ease;
+}
+body {
+    background: linear-gradient(to bottom, #fff6ed, #fff6ed);
+}
+
+.nav {
+    position: fixed;
+    top: 25%;
+    left: 0;
+    z-index: 999;
+    width: 2px; 
+}
+
+@media screen and (max-width: 600px) {
+    .nav {
+        display: none;
+    }
+}
+
+.option {
+    cursor: pointer;
+    position: relative;
+}
+
+.icon-default,
+.icon-hover {
+    display: block;
+    width: 50px; 
+    height: 50px;
+    background-size: cover;
+    transition: opacity 0.7s;
+}
+
+
+.icon-hover {
+    opacity: 0; 
+    position: absolute; 
+    top: 0;
+    left: 0;
+}
+
+.option:hover .icon-default {
+    opacity: 0;
+}
+
+.option:hover .icon-hover {
+    opacity: 1; 
+}
+
+.option i {
+    display: block;
+    width: 50px;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    background: #737373;
+    transition: 0.6s;
+    border-width: 2px;
+    border-style: groove;
+    border-color: #ffffff;
+    border-radius: 10%;
+    box-shadow: 0px 0px 3px 2px #e7dddd7f;
+}
+
+
+.text {
+    font-family: '汉仪润圆-55W.ttf';
+    position: absolute;
+    height: 50px;
+    width: 210px;
+    background: #737373;
+    top: 0;
+    z-index: -1;
+    left: -250px;
+    color: #ffffff;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #ffffff;
+    line-height: 45px;
+    text-align: center;
+    transition: 0.6s;
+}
+
+.option:hover .text {
+    left: 50px;
+}
+
+
+.flourish-embed span {
+    background-color: transparent;
+}
+
+.content {
+    width: 60%;
+    margin: 0 auto;
+    padding: 1% 6%;
+    color: #343434;
+    font-size: 1.05em;
+    line-height: 1.5em;
+}
+
+@media screen and (max-width: 600px) {
+    .content {
+        width: 90%;
+        margin: 0 auto;
+        padding: 1% 6%;
+        color: #343434;
+        font-size: 0.8em;
+        line-height: 1.5em;
+    }
+}
+
+.content p {
+    font-family: '汉仪润圆-55W';
+}
+
+.chart {
+    font-family: '汉仪润圆-55W';
+    font-size: 25px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.chart iframe {
+    display: block;
+    margin: 0 auto;
+}
+
+
+@media screen and (max-width: 600px) {
+    .chart {
+        font-family: '汉仪润圆-55W';
+        font-size: 1.2em;
+        text-align: center;
+        line-height: 1.5em;
+    }
+
+    .chart iframe {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+
+.note {
+    font-family: '汉仪润圆-55W';
+    font-size: 0.8em;
+    color: #888888;
+    text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    .note {
+        font-size: 0.5em;
+    }
+}
+
+.chapter1 h1{
+    margin-bottom: 50px;
+    text-align: center;
+    font-family: '汉仪润圆-55W';
+    color: #646363;
+}
+
+.chapter1 h2{
+    margin-bottom: 40px;
+    text-align: center;
+    font-family: '汉仪润圆-55W';
+    color: #646363;
+}
+
+.chapter1 h3{
+    margin-bottom: 30px;
+    text-align: center;
+    font-family: '汉仪润圆-55W';
+    color: #646363;
+}
+
+.chapter1 p{
+    margin-bottom: 30px;
+    font-family: '汉仪润圆-55W';
+    color: #6d6d6d;
+}
+
+.chapter1 .content span,
+.chapter1 .top span,
+.chapter1 .step span {
+    background-color: #b23d2b;
+    font-family: '汉仪润圆-55W';
+    color:  #f1e2d3;
+}
+
+.chapter2 .content span,
+.chapter2 .top span,
+.chapter2 .step span {
+    background-color: #8b2f21;
+}
+
+.chapter3 .content span,
+.chapter3 .top span,
+.chapter3 .step span {
+    background-color: #8b2f21; 
+}
+
+.chapter4 .content span,
+.chapter4 .top span,
+.chapter4 .step span {
+    background-color:#8b2f21; 
+}
+
+
+.chapter2 h1{
+    margin-bottom: 50px;
+    text-align: center;
+    font-family: '汉仪润圆-55W';
+    color: #646363;
+}
+
+.chapter2 h2{
+    margin-bottom: 40px;
+    text-align: center;
+    font-family: '汉仪润圆-55W';
+    color: #646363;
+}
+
+.chapter2 h3{
+    margin-bottom: 30px;
+    text-align: center;
+    font-family: '汉仪润圆-55W';
+    color: #646363;
+}
+
+.chapter2 p{
+    margin-bottom: 30px;
+    font-family: '汉仪润圆-55W';
+    color: #6d6d6d;
+}
+
+.chapter3 h1{
+    margin-bottom: 50px;
+    text-align: center;
+    font-family: '汉仪润圆-55W';
+    color: #646363;
+}
+
+.chapter3 h2{
+    margin-bottom: 40px;
+    text-align: center;
+    font-family: '汉仪润圆-55W';
+    color: #646363;
+}
+
+.chapter3 h3{
+    margin-bottom: 30px;
+    text-align: center;
+    font-family: '汉仪润圆-55W';
+    color: #646363;
+}
+
+.chapter3 p{
+    margin-bottom: 30px;
+    font-family: '汉仪润圆-55W';
+    color: #6d6d6d;
+}
+
+.chapter4 h1{
+    margin-bottom: 50px;
+    text-align: center;
+    font-family: '汉仪润圆-55W';
+    color: #646363;
+}
+
+.chapter4 h2{
+    margin-bottom: 40px;
+    text-align: center;
+    font-family: '汉仪润圆-55W';
+    color: #646363;
+}
+
+.chapter4 h3{
+    margin-bottom: 30px;
+    text-align: center;
+    font-family: '汉仪润圆-55W';
+    color: #646363;
+}
+
+.chapter4 p{
+    margin-bottom: 30px;
+    font-family: '汉仪润圆-55W';
+    color: #6d6d6d;
+}
+
+.fa-lg {
+    vertical-align: 0% !important;
+}
+
+.photo {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+.box {
+    width: 800px;
+    height: 511px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    .box {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .box-mobile {
+        display: none;
+    }
+}
+
+.box p {
+    text-align: center;
+}
+
+.q1 {
+    width: 435px;
+    height: 284px;
+    float: left;
+    background-image: url(../image/injury.png);
+    background-size: cover;
+}
+
+.q1:hover .title {
+    opacity: 0;
+}
+
+.q2:hover .title {
+    opacity: 0;
+}
+
+.q3:hover .title {
+    opacity: 0;
+}
+
+.q4:hover .title {
+    opacity: 0;
+}
+
+.q5:hover .title {
+    opacity: 0;
+}
+
+.q6:hover .title {
+    opacity: 0;
+}
+
+.q7:hover .title {
+    opacity: 0;
+}
+
+.q1:hover {
+    background-color: transparent;
+    background-image: url(../image/q1.png);
+    background-size: cover;
+}
+
+.q2 {
+    width: 341px;
+    height: 194px;
+    /* border:solid;
+    border-radius: 10px;
+    border-width: 3px 3px 3px 0;
+    box-shadow:0px 0px 5px 3px #bcbcbc7f;
+    border-color: #e3e3e3; */
+    display: inline-block;
+    /* color:#343434; */
+    transform: translate(2px, 0px);
+    background-image: url(../image/compensation.png);
+    background-size: cover;
+}
+
+.q2:hover {
+    background-color: transparent;
+    background-image: url(../image/q2.png);
+    background-size: cover;
+}
+
+.q5 {
+    width: 435px;
+    height: 230px;
+    float: left;
+    /* border-radius: 10px;
+    border:solid;
+    border-width: 0 3px 3px 3px;
+    box-shadow:0px 0px 5px 3px #bcbcbc7f;
+    border-color: #e3e3e3; */
+    transform: translate(0px, 3px);
+    background-image: url(../image/remuneration.png);
+    background-size: cover;
+}
+
+.q5:hover {
+    background-color: transparent;
+    background-image: url(../image/q5.png);
+    background-size: cover;
+}
+
+.q3 {
+    width: 149px;
+    height: 320px;
+    /* border: solid;
+    border-radius: 10px;
+    border-width: 0 1.5px 3px 0;
+    border-color: #e3e3e3;
+    box-shadow:0px 2px 5px 3px #bcbcbc7f; */
+    display: inline-block;
+    transform: translate(3px, -2px);
+    background-image: url(../image/invalid.png);
+    background-size: cover;
+}
+
+.q3:hover {
+    background-color: transparent;
+    background-image: url(../image/q3.png);
+    background-size: cover;
+}
+
+.q4 {
+    width: 189px;
+    height: 195px;
+    /* border:solid;
+    border-radius: 10px;
+    border-width: 0 3px 3px 1.5px;
+    border-color: #e3e3e3;
+    box-shadow:0px 0px 5px 2px #bcbcbc7f; */
+    display: inline-block;
+    transform: translate(0px, -127px);
+    background-image: url(../image/insurance.png);
+    background-size: cover;
+}
+
+.q4:hover {
+    background-color: transparent;
+    background-image: url(../image/q4.png);
+    background-size: cover;
+}
+
+.q6 {
+    width: 189px;
+    height: 122px;
+    /* border-radius: 10px; */
+    /* border:solid;
+    border-width: 0 3px 3px 1.5px;
+    border-color: #e3e3e3;
+    box-shadow:0px 0px 5px 2px #bcbcbc7f; */
+    transform: translate(590px, -130px);
+    background-image: url(../image/accident.png);
+    background-size: cover;
+}
+
+.q6:hover {
+    background-color: transparent;
+    background-image: url(../image/q6.png);
+    background-size: cover;
+}
+
+.people {
+    width: 80%;
+    margin: auto 8% auto 13%;
+}
+
+@media screen and (max-width: 600px) {
+    .nopeople {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .people-mobile {
+        display: none;
+    }
+}
+
+.policy1 {
+    margin-left: 80px;
+    margin-bottom: 50px;
+}
+
+.ending {
+    font-family: '汉仪润圆-55W.ttf';
+    color: #343434;
+    font-size: 20px;
+    text-align: center;
+}
+
+
+.ending p {
+    margin: auto;
+}
+
+.team {
+    text-align: center;
+    color: #343434;
+    line-height: 2em;
+    font-size: 20px;
+}
+
+.photo-container {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.photo {
+    flex: 1;
+    margin-right: 10px;
+}
+.photo img {
+    width: 100%;
+    box-shadow: none;
+}
+
+.chart-container {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.charting {
+    flex: 1;
+    margin-right: 10px;
+}
+.chart img {
+    width: 100%;
+    box-shadow: none;
+}
+

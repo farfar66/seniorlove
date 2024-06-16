@@ -1,0 +1,162 @@
+<!--
+	此示例下载自 https://echarts.apache.org/examples/zh/editor.html?c=pictorialBar-velocity&lang=ts&code=MYewdgzgLgBADgQygCwMoE8C2AjEAbCGAXhgG8AoGGKAJwUgWCgEtwAxOgVwBMAuGAOQBmABwA6AIwBSAQBpKMGgFNsSJRwQ9-AiQFZJM-VW5JmYAOYatgiRLEAmQwsQ0oAFWaZ1XPoJFOqT2YoU3YfbQB2MX85BQAzM3pgZgQ8AGFlbmCrXwEANjFdGXIAXwBucnIQOBZwYjIFKBB8Fjh-CioqWmZzcyUabQQAD2YIWM6YYdGABRAzKH72hQmodDglbTBwJQFlmBKjTriQGkwkBYGYOM4wJlYwGAAKFwRMCABKBomqZShOGgeLzeAG0AAwAXTEYFeShgAGpBNp4fAEHQQRCxAA3VKcWEIgQyCoTEoKA4KIYAQRGECWExMIX4wL2VAEgBK5QDIZoAJ6MA6Vnjb4CQAr8YBKJR5fImbMA08qiw7iwA-ioAZAOlzMEgH-5QBJikrvoJAIuJgFjwwCH8oAKV1Fe3BMsm1I8wAA1u0YBBkCAAO78OKpCCwskTKYQAAyZg2ZHtjpdV3dnvNPt9CGwSjwtO-oDwJ20AGJsCIhHF7MAxZ15v1sfGYKDZDBlTQQCEFvwACy6PYkqhemDoKmjBNUCBwPDBf1gQOkYPO13h_aRy3MG12h0jsMECN7KMBmch0cL8dL6nR2PFoez0NujdNzdUcw0Zi-DqdXBQJqYfgRUGkw5JlMwYECdOZ7O5s0KD0LyUGkPz2a8JmhLxtGQZg8DwPMujWQMBDgKcmgvVIACFUQQmBVBoNI1HME50AAcQQNpBAAWgkIRQQCb4ICwXBixQpBkF4AB6TiAFlSwkUEYF9ATZAEmA0n0XRRMEyTZF0GApMEtJa0KOSYBUqSxP4wSAC9cOCJRMFQVY8EHZUqGqRhgnQfhQVU8yYDfS4vwzLMc12LUWwmQy4GQBAIA7L4tRgAyjJMszgs6SzklWfgJAck9iXNKg8BjONO0YtdqBoXFks6OAQAC2owG0Jo4FwqgnLTVzfwqq4TjOO9FiuG47jqZ5UVeD4gsi35_kBTq3ixHE8UEQkEuVLzOnpBBGVESQyz0BaYFsBwyxEMsog2mACl0f8tR0uLnySsDlUg5DzDwNZkFw1Z1m0VCmBOFI8GwmhcPw8jKIEGjQXo3CmJwfBZiK-5tCUMBuAB5j8FQZgdMDXRS2VQGWIAeTiOIPSgRlS2oiR7H-_bvlS3cMomA9-FoXKHIK0HwFK6o6qqwRvzc3M8qoY5TnOZrrluYqniBbrwOCvqARRFAMCBghgQAAyLXEABJSGFsQZoASUhpQhhKOXwSJYLEs6KbjCQWbQMi0WtUVwNEClmGCDEWh6AgRhipyBLOZ64Lbf4e20EdiAxGUVQFk9yLTc6a3vj9yXA5l4P6TMSwfC9hyY4mOOA-lljg5cdxPG8TRuHTq2HKobP2Nz_Bg6Cat7gjo3vczzoq4dxOxASaFbhejIlCyKAm885VwUbBQx_KIA
+	⚠ 请注意，该图表不是 Apache ECharts 官方示例，而是由用户代码生成的。请注意鉴别其内容。
+-->
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.5.0/files/dist/echarts.min.js"></script>
+  
+  <!-- Uncomment this line if you want to dataTool extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.5.0/files/dist/extension/dataTool.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use gl extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts-gl/2/files/dist/echarts-gl.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-stat extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts-stat/latest/files/dist/ecStat.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use map
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/4.9.0/files/map/js/china.js"></script>
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/4.9.0/files/map/js/world.js"></script>
+  -->
+  <!-- Uncomment these two lines if you want to use bmap extension
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=YOUR_API_KEY"></script>
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.5.0/files/dist/extension/bmap.min.js"></script>
+  -->
+
+  <script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    const pathSymbols = {
+  transactionFraud: '38.1%',
+  rebateFraud: '15.1%',
+  datingFraud: '11.2%',
+  partTimeFraud: '8%',
+  imitationFraud: '7.8%',
+  financialCreditFraud: '6.5%'
+};
+
+option = {
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'none'
+    },
+    formatter: function (params) {
+      return params[0].name + ': ' + params[0].value + '%';
+    }
+  },
+  xAxis: {
+    data: [
+      '交易诈骗',
+      '返利诈骗',
+      '交友诈骗',
+      '兼职诈骗',
+      '仿冒诈骗',
+      '金融信用诈骗'
+    ],
+    axisTick: { show: false },
+    axisLine: { show: false },
+    axisLabel: {
+      color: '#b83f2c',
+      interval: 0, 
+      rotate: 45
+    }
+  },
+  yAxis: {
+    splitLine: { show: false },
+    axisTick: { show: false },
+    axisLine: { show: false },
+    axisLabel: { show: false }
+  },
+  grid: {
+    bottom: 70
+  },
+  color: ['#b83f2c'],
+  series: [
+    {
+      name: 'hill',
+      type: 'pictorialBar',
+      barCategoryGap: '-130%',
+      symbol: 'path://M0,10 L10,10 C5.5,10 5.5,5 5,0 C4.5,5 4.5,10 0,10 z',
+      itemStyle: {
+        opacity: 0.5,
+        color: '#b83f2c'
+      },
+      emphasis: {
+        itemStyle: {
+          opacity: 1
+        }
+      },
+      label: {
+        show: true,
+        position: 'top',
+        color: '#b83f2c',
+        formatter: function (params) {
+          return params.value + '%';
+        }
+      },
+      data: [38.1, 15.1, 11.2, 8, 7.8, 6.5],
+      z: 10
+    },
+    {
+      name: 'glyph',
+      type: 'pictorialBar',
+      barGap: '-100%',
+      symbolPosition: 'end',
+      symbolSize: 50,
+      symbolOffset: [0, '-120%'],
+      label: {
+        show: true,
+        position: 'top',
+        color: '#b83f2c',
+        formatter: function (params) {
+          return pathSymbols[`value${params.dataIndex}`];
+        }
+      },
+      data: [
+        {
+          value: pathSymbols.transactionFraud
+        },
+        {
+          value: pathSymbols.rebateFraud
+        },
+        {
+          value: pathSymbols.datingFraud
+        },
+        {
+          value: pathSymbols.partTimeFraud
+        },
+        {
+          value: pathSymbols.imitationFraud
+        },
+        {
+          value: pathSymbols.financialCreditFraud
+        }
+      ]
+    }
+  ]
+};
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

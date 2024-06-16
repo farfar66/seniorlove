@@ -1,0 +1,142 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.top {
+    width: 100%;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+}
+.swiper {
+    width: 100%;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+}
+.swiper0 .slide1 {
+    background-image: url('../image/co-end/1.png');
+    background-size: 100% 100%;
+}
+.swiper0 .slide2 {
+    background-image: url('../image/co-end/2.png');
+    background-size: 100% 100%;
+}
+
+.swiper0 .slide3 {
+    background-image: url('../image/co-end/3.png');
+    background-size: 100% 100%;
+}
+
+.swiper0 .slide4 {
+    background-image: url('../image/co-end/4.png');
+    background-size: 100% 100%;
+}
+
+.swiper1 .slide1 {
+    background-image: url('../image/cover/5.png');
+    background-size: 100% 100%;
+}
+
+.swiper1 .slide2 {
+    background-image: url('../image/cover/6.png');
+    background-size: 100% 100%;
+}
+
+#trigger_500 {
+    position: relative;
+    z-index: 10;
+    margin: 500px auto 0;
+    text-align: justify;
+    height: 10px;
+    background: transparent;
+}
+
+#trigger_800 {
+    position: relative;
+    z-index: 10;
+    margin: 800px auto 0;
+    text-align: justify;
+    height: 10px;
+    background: transparent;
+}
+
+.swiper2 .slide1 {
+    background-image: url(../image/chapter/7.png);
+    background-size: 100% 100%;
+}
+
+.swiper2 .slide2 {
+    background-image: url(../image/chapter/8.png);
+    background-size: 100% 100%;
+}
+
+
+.swiper3 .slide1 {
+    background-image: url(../image/chapter/9.png);
+    background-size: 100% 100%;
+}
+
+.swiper3 .slide2 {
+    background-image: url(../image/chapter/10.png);
+    background-size: 100% 100%;
+}
+
+.swiper4 .slide1 {
+    background-image: url(../image/chapter/11.png);
+    background-size: 100% 100%;
+}
+
+.swiper4 .slide2 {
+    background-image: url(../image/chapter/12.png);
+    background-size: 100% 100%;
+}
+
+.swiper5 .slide1 {
+    background-image: url(../image/ending/e1.png);
+    background-size: 100% 100%;
+}
+
+.swiper5 .slide2 {
+    background-image: url(../image/ending/e2.png);
+    background-size: 100% 100%;
+}
+
+.swiper5 .slide3 {
+    background-image: url(../image/ending/e3.png);
+    background-size: 100% 100%;
+}
+
+.swiper5 .slide4 {
+    background-image: url(../image/ending/e4.png);
+    background-size: 100% 100%;
+}
+
+.swiper6 .slide1 {
+    background-image: url(../image/animate/bahe/1.png);
+    background-size: cover;
+}
+
+.swiper6 .slide2 {
+    background-image: url(../image/animate/bahe/2.png);
+    background-size: cover;
+}
+
+.swiper6 .slide3 {
+    background-image: url(../image/animate/bahe/3.png);
+    background-size: cover;
+}
+
+.swiper6 .slide4 {
+    background-image: url(../image/animate/bahe/4.png);
+    background-size: cover;
+}
+
+
+.bottom-placeholder {
+    width: 200px;
+    height: 400px;
+    background-color: transparent;
+    margin: 0 auto;
+    position: relative;
+}
